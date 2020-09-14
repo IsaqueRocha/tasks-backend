@@ -42,7 +42,7 @@ public class TaskControllerTest {
     @Test
     public void naoDeveSalvarTarefaSemData() {
         Task todo = new Task();
-        todo.setName( "Name" );
+        todo.setTask( "Name" );
         try {
             controller.save( todo );
             Assert.fail();
@@ -55,7 +55,7 @@ public class TaskControllerTest {
     public void naoDeveSalvarTarefaComDataPassada() {
         Task todo = new Task();
         todo.setDueDate( LocalDate.of( 2010, 1, 1 ) );
-        todo.setName( "Name" );
+        todo.setTask( "Name" );
         try {
             controller.save( todo );
             Assert.fail();
@@ -68,7 +68,7 @@ public class TaskControllerTest {
     public void deveSalvarTarefaComSucesso() throws ValidationException {
         Task todo = new Task();
         todo.setDueDate( LocalDate.now() );
-        todo.setName( "Name" );
+        todo.setTask( "Name" );
         controller.save( todo );
         Mockito.verify(taskRepo).save( todo );
     }

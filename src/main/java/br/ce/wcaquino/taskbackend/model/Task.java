@@ -13,7 +13,7 @@ public class Task {
 	private Long id;
 	
 	@Column(nullable = false)
-	private String name;
+	private String task;
 	
 	@Column(nullable = false)
 	private LocalDate dueDate;
@@ -32,12 +32,12 @@ public class Task {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getTask() {
+		return task;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTask(String task) {
+		this.task = task;
 	}
 	
 	public LocalDate getDueDate() {
